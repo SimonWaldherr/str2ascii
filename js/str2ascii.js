@@ -1,10 +1,15 @@
 function str2ascii(str, del)
   {
     var ascii = '';
-    str = str.split(del);
-    for(var i in str)
+    var i = 0;
+    while(i < str.length)
       {
-        ascii += str[i].charCodeAt(0);
+        ascii += str.charCodeAt(i);
+        if(i < str.length-1)
+          {
+            ascii += del;
+          }
+        i++;
       }
     return ascii;
   }
